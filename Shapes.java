@@ -23,6 +23,7 @@ public class Shapes extends JComponent
         double dPosX = x - (double)size/2;
         double dPoxY = y - (double)size/2;
         Shapes.add(new Ellipse2D.Double(dPosX, dPoxY, size, size));
+        repaint();
         new Thread().start();
     }
 
@@ -30,7 +31,6 @@ public class Shapes extends JComponent
     {
         super.paint(graphics);
         Graphics2D graphics2D = (Graphics2D) graphics;
-
     }
 
 }
