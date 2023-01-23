@@ -1,9 +1,6 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
 
 import static java.awt.Color.white;
 
@@ -23,6 +20,7 @@ public class Windows extends JPanel implements ActionListener
         canvasWindow.setBackground(white);
         canvasWindow.setVisible(true);
 
+
         JButton circleButton = new JButton("Draw circle");
         circleButton.setSize(200,60);
         circleButton.setFocusable(false);
@@ -34,10 +32,10 @@ public class Windows extends JPanel implements ActionListener
         JLabel sizeLabel = new JLabel("Size: " + sizeSlider.getValue());
         sizeLabel.setBounds(660,590,70,20);
 
-        positionX = new JTextField(20);
+        positionX = new JTextField(5);
         positionX.setSize(200,60);
 
-        positionY = new JTextField(20);
+        positionY = new JTextField(5);
         positionY.setSize(200,60);
 
         circleButton.setLocation(10,580);
@@ -65,6 +63,7 @@ public class Windows extends JPanel implements ActionListener
         double a = Double.parseDouble(x);
         double b = Double.parseDouble(y);
         Move.shapes.addCircle(a, b);
+        canvasWindow.add(Move.shapes);
         repaint();
     }
 }
